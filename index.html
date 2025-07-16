@@ -117,12 +117,12 @@ Malla-CPA-USACH <3
     <!-- 9no Semestre -->
     <div class="semester">
       <h3>9° Semestre</h3>
-      <div class="course" id="curso52" style="display:none;">52 - Seminario de Titulación I (Req:SCT 240, Sct:7)</div>
-      <div class="course" id="curso53" style="display:none;">53 - Práctica Profesional (Req:SCT 240, Sct:10)</div>
-      <div class="course" id="curso54" style="display:none;">54 - Juego de Empresas (Req:SCT 240, Sct:4)</div>
-      <div class="course" id="curso55" style="display:none;">55 - Electivo I (Req:SCT 210, Sct:3)</div>
-      <div class="course" id="curso56" style="display:none;">56 - Electivo II (Req:SCT 210, Sct:3)</div>
-      <div class="course" id="curso57" style="display:none;">57 - Electivo III (Req:SCT 210, Sct:3)</div>
+      <div class="course">52 - Seminario de Titulación I (Req:SCT 240, Sct:7)</div>
+      <div class="course">53 - Práctica Profesional (Req:SCT 240, Sct:10)</div>
+      <div class="course">54 - Juego de Empresas (Req:SCT 240, Sct:4)</div>
+      <div class="course">55 - Electivo I (Req:SCT 210, Sct:3)</div>
+      <div class="course">56 - Electivo II (Req:SCT 210, Sct:3)</div>
+      <div class="course">57 - Electivo III (Req:SCT 210, Sct:3)</div>
     </div>
 
     <!-- 10mo Semestre -->
@@ -164,35 +164,42 @@ Malla-CPA-USACH <3
     function update() {
       const totalSct = sumSct();
       console.log('SCT:', totalSct);
-      // Desbloqueo SCT
-      if (totalSct >= 240) {
-        ['curso52','curso53','curso54','curso59','curso60','curso61'].forEach(id => {
-          document.getElementById(id)?.style.setProperty('display','block');
-        });
-      }
-      if (totalSct >= 210) {
-        ['curso55','curso56','curso57'].forEach(id => {
-          document.getElementById(id)?.style.setProperty('display','block');
-        });
-      }
-      // Bloqueo por Req ID
       courses.forEach(el => {
-        const id = getId(el); const req = getReq(el);
-        if (approved.includes(id)) { el.classList.add('approved'); } else { el.classList.remove('approved'); }
+        const id = getId(el);
+        const req = getReq(el);
+        if (approved.includes(id)) {
+          el.classList.add('approved');
+        } else {
+          el.classList.remove('approved');
+        }
         if (req) {
-          if (req.startsWith('SCT')) return;
-          if (!approved.includes(parseInt(req))) { el.classList.add('blocked'); } else { el.classList.remove('blocked'); }
+          if (req.startsWith('SCT')) {
+            const min = parseInt(req.split(' ')[1]);
+            if (totalSct < min && !approved.includes(id)) {
+              el.classList.add('blocked');
+            } else {
+              el.classList.remove('blocked');
+            }
+          } else {
+            const reqId = parseInt(req);
+            if (!approved.includes(reqId) && !approved.includes(id)) {
+              el.classList.add('blocked');
+            } else {
+              el.classList.remove('blocked');
+            }
+          }
         }
       });
     }
-
     courses.forEach(el => {
-      if (!el.id) el.style.display = 'block';
       el.addEventListener('click', () => {
         if (el.classList.contains('blocked')) return;
         const id = getId(el);
-        if (approved.includes(id)) { approved = approved.filter(x => x !== id); }
-        else { approved.push(id); }
+        if (approved.includes(id)) {
+          approved = approved.filter(x => x !== id);
+        } else {
+          approved.push(id);
+        }
         localStorage.setItem('approved', JSON.stringify(approved));
         update();
       });
@@ -202,4 +209,3 @@ Malla-CPA-USACH <3
 
 </body>
 </html>
-
