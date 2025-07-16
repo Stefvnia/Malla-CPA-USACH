@@ -1,1 +1,196 @@
 # Malla-CPA-USACH
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contador Público Auditor, Usach</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6e6;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 40px;
+      font-weight: normal;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .semester {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 240px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .semester h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #d6336c;
+    }
+
+    .course {
+      background: #ffc0cb;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 6px 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .course:hover {
+      background: #ff99bb;
+    }
+
+    .course.approved {
+      background: #ff00ff;
+      color: white;
+      text-decoration: line-through;
+    }
+
+    .course.blocked {
+      background: #ddd;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contador Público Auditor, Usach</h1>
+  <h2>Stefvnia._</h2>
+
+  <div class="grid">
+
+    <!-- 1er Semestre -->
+    <div class="semester">
+      <h3>1° Semestre</h3>
+      <div class="course">1 - Herramientas Computacionales (Sct:4)</div>
+      <div class="course">2 - Matemáticas I (Sct:5)</div>
+      <div class="course">3 - Introducción a la Administración (Sct:5)</div>
+      <div class="course">4 - Derecho de Empresas I (Sct:4)</div>
+      <div class="course">5 - Introducción a la Economía (Sct:4)</div>
+      <div class="course">6 - Introducción al Medio Profesional (Sct:5)</div>
+      <div class="course">7 - Inglés Básico I (Sct:3)</div>
+    </div>
+
+    <!-- 2do Semestre -->
+    <div class="semester">
+      <h3>2° Semestre</h3>
+      <div class="course">8 - Fundamentos de Contabilidad (Req:6, Sct:6)</div>
+      <div class="course">9 - Matemáticas II (Req:2, Sct:5)</div>
+      <div class="course">10 - Administración y Modelo de Gestión (Req:3, Sct:6)</div>
+      <div class="course">11 - Derecho de Empresas II (Req:4, Sct:4)</div>
+      <div class="course">12 - Introducción a la Microeconomía (Req:5, Sct:4)</div>
+      <div class="course">13 - Curso de Formación Integral (Sct:2)</div>
+      <div class="course">14 - Inglés Básico II (Req:7, Sct:3)</div>
+    </div>
+
+    <!-- 3er Semestre -->
+    <div class="semester">
+      <h3>3° Semestre</h3>
+      <div class="course">15 - Procesos Contables I (Req:8, Sct:5)</div>
+      <div class="course">16 - Matemáticas III (Req:9, Sct:5)</div>
+      <div class="course">17 - Planificación y Dirección Estratégica (Req:3, Sct:4)</div>
+      <div class="course">18 - Derecho Tributario I (Req:11, Sct:4)</div>
+      <div class="course">19 - Introducción a la Macroeconomía (Req:12, Sct:4)</div>
+      <div class="course">20 - Fundamentos de Programación (Req:2, Sct:5)</div>
+      <div class="course">21 - Inglés Básico III (Req:14, Sct:3)</div>
+    </div>
+
+    <!-- 4to Semestre -->
+    <div class="semester">
+      <h3>4° Semestre</h3>
+      <div class="course">22 - Procesos Contables II (Req:15, Sct:6)</div>
+      <div class="course">23 - Probabilidad y Estadística (Req:9, Sct:6)</div>
+      <div class="course">24 - Fundamentos de Costos (Req:8, Sct:6)</div>
+      <div class="course">25 - Derecho Tributario II (Req:18, Sct:5)</div>
+      <div class="course">26 - Base de Datos (Req:20, Sct:4)</div>
+      <div class="course">27 - Inglés Básico IV (Req:21, Sct:3)</div>
+    </div>
+
+    <!-- 5to Semestre -->
+    <div class="semester">
+      <h3>5° Semestre</h3>
+      <div class="course">28 - Procesos Contables III (Req:22, Sct:6)</div>
+      <div class="course">29 - Estadística Inferencial (Req:23, Sct:4)</div>
+      <div class="course">30 - Costos para la Toma de Decisiones (Req:24, Sct:6)</div>
+      <div class="course">31 - Derecho Tributario III (Req:25, Sct:5)</div>
+      <div class="course">32 - Técnicas Informáticas de Extracción y Análisis de Datos (Req:26, Sct:4)</div>
+      <div class="course">33 - Control Interno, Gobernanza y Riesgo (Req:15, Sct:5)</div>
+    </div>
+
+    <!-- 6to Semestre -->
+    <div class="semester">
+      <h3>6° Semestre</h3>
+      <div class="course">34 - Formulación y Preparación de Estados Contables (Req:28, Sct:5)</div>
+      <div class="course">35 - Introducción a las Finanzas (Req:22, Sct:5)</div>
+      <div class="course">36 - Presupuestos (Req:30, Sct:6)</div>
+      <div class="course">37 - Derecho Tributario IV (Req:31, Sct:5)</div>
+      <div class="course">38 - Modelamiento de Procesos de Negocios (Req:32, Sct:4)</div>
+      <div class="course">39 - Fundamentos de Auditoría y Ética (Req:33, Sct:5)</div>
+    </div>
+
+    <!-- 7mo Semestre -->
+    <div class="semester">
+      <h3>7° Semestre</h3>
+      <div class="course">40 - Contabilidad Especial (Req:28, Sct:4)</div>
+      <div class="course">41 - Auditoría Financiera (Req:34, Sct:5)</div>
+      <div class="course">42 - Control de Gestión (Req:30, Sct:6)</div>
+      <div class="course">43 - Aplicación de Sistemas de Información Contables (Req:34, Sct:5)</div>
+      <div class="course">44 - Modelos de Regresión (Req:19, Sct:5)</div>
+      <div class="course">45 - Formulación, Evaluación y Valoración de Empresas (Req:35, Sct:5)</div>
+    </div>
+
+    <!-- 8vo Semestre -->
+    <div class="semester">
+      <h3>8° Semestre</h3>
+      <div class="course">46 - Contabilidad Gubernamental (Req:28, Sct:6)</div>
+      <div class="course">47 - Finanzas Corporativas (Req:45, Sct:5)</div>
+      <div class="course">48 - Auditoría Interna (Req:42, Sct:5)</div>
+      <div class="course">49 - Investigación Contable (Req:28, Sct:5)</div>
+      <div class="course">50 - Gestión y Auditoría de Sistemas de Información (Req:38, Sct:6)</div>
+      <div class="course">51 - Inglés Técnico I (Req:27, Sct:3)</div>
+    </div>
+
+    <!-- 9no Semestre -->
+    <div class="semester">
+      <h3>9° Semestre</h3>
+      <div class="course">52 - Seminario de Titulación I (Req:SCT 240, Sct:7)</div>
+      <div class="course">53 - Práctica Profesional (Req:SCT 240, Sct:10)</div>
+      <div class="course">54 - Juego de Empresas (Req:SCT 240, Sct:4)</div>
+      <div class="course">55 - Electivo I (Req:SCT 210, Sct:3)</div>
+      <div class="course">56 - Electivo II (Req:SCT 210, Sct:3)</div>
+      <div class="course">57 - Electivo III (Req:SCT 210, Sct:3)</div>
+    </div>
+
+    <!-- 10mo Semestre -->
+    <div class="semester">
+      <h3>10° Semestre</h3>
+      <div class="course">58 - Seminario de Titulación II (Req:52, Sct:18)</div>
+      <div class="course">59 - Electivo IV (Req:SCT 240, Sct:3)</div>
+      <div class="course">60 - Electivo V (Req:SCT 240, Sct:3)</div>
+      <div class="course">61 - Electivo VI (Req:SCT 240, Sct:3)</div>
+      <div class="course">62 - Inglés Técnico II (Req:51, Sct:3)</div>
+    </div>
+
+  </div>
+</body>
+</html>
