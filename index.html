@@ -5,72 +5,16 @@ Malla-CPA-USACH <3
   <meta charset="UTF-8" />
   <title>Contador Público Auditor, Usach</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #ffe6e6;
-      margin: 0;
-      padding: 40px;
-      text-align: center;
-    }
-
-    h1 {
-      color: #d6336c;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      color: #555;
-      margin-top: 0;
-      margin-bottom: 40px;
-      font-weight: normal;
-    }
-
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .semester {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      width: 240px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .semester h3 {
-      margin-top: 0;
-      margin-bottom: 15px;
-      color: #d6336c;
-    }
-
-    .course {
-      background: #ffc0cb;
-      border: none;
-      border-radius: 6px;
-      padding: 10px;
-      margin: 6px 0;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-align: left;
-    }
-
-    .course:hover:not(.blocked) {
-      background: #ff99bb;
-    }
-
-    .course.approved {
-      background: #ff00ff;
-      color: white;
-      text-decoration: line-through;
-    }
-
-    .course.blocked {
-      background: #ddd;
-      cursor: not-allowed;
-    }
+    body { background: #ffe6e6; font-family: Arial, sans-serif; text-align: center; padding: 40px; }
+    h1 { color: #d6336c; margin-bottom: 5px; }
+    h2 { color: #555; margin: 0 0 40px; font-weight: normal; }
+    .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .semester { background: #fff; border-radius: 12px; padding: 20px; width: 250px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .semester h3 { color: #d6336c; margin: 0 0 15px; }
+    .course { background: #ffc0cb; border-radius: 6px; margin: 6px 0; padding: 10px; cursor: pointer; text-align: left; transition: 0.2s; }
+    .course:hover:not(.blocked) { background: #ff99bb; }
+    .approved { background: #ff00ff; color: white; text-decoration: line-through; }
+    .blocked { background: #ddd; cursor: not-allowed; }
   </style>
 </head>
 <body>
@@ -103,7 +47,72 @@ Malla-CPA-USACH <3
       <div class="course">14 - Inglés Básico II (Req:7, Sct:3)</div>
     </div>
 
-    <!-- (Resto igual: 3°, 4°, 5°, 6°, 7°, 8° ...) -->
+    <!-- 3er Semestre -->
+    <div class="semester">
+      <h3>3° Semestre</h3>
+      <div class="course">15 - Procesos Contables I (Req:8, Sct:5)</div>
+      <div class="course">16 - Matemáticas III (Req:9, Sct:5)</div>
+      <div class="course">17 - Planificación y Dirección Estratégica (Req:3, Sct:4)</div>
+      <div class="course">18 - Derecho Tributario I (Req:11, Sct:4)</div>
+      <div class="course">19 - Introducción a la Macroeconomía (Req:12, Sct:4)</div>
+      <div class="course">20 - Fundamentos de Programación (Req:2, Sct:5)</div>
+      <div class="course">21 - Inglés Básico III (Req:14, Sct:3)</div>
+    </div>
+
+    <!-- 4to Semestre -->
+    <div class="semester">
+      <h3>4° Semestre</h3>
+      <div class="course">22 - Procesos Contables II (Req:15, Sct:6)</div>
+      <div class="course">23 - Probabilidad y Estadística (Req:9, Sct:6)</div>
+      <div class="course">24 - Fundamentos de Costos (Req:8, Sct:6)</div>
+      <div class="course">25 - Derecho Tributario II (Req:18, Sct:5)</div>
+      <div class="course">26 - Base de Datos (Req:20, Sct:4)</div>
+      <div class="course">27 - Inglés Básico IV (Req:21, Sct:3)</div>
+    </div>
+
+    <!-- 5to Semestre -->
+    <div class="semester">
+      <h3>5° Semestre</h3>
+      <div class="course">28 - Procesos Contables III (Req:22, Sct:6)</div>
+      <div class="course">29 - Estadística Inferencial (Req:23, Sct:4)</div>
+      <div class="course">30 - Costos para la Toma de Decisiones (Req:24, Sct:6)</div>
+      <div class="course">31 - Derecho Tributario III (Req:25, Sct:5)</div>
+      <div class="course">32 - Técnicas Informáticas de Extracción y Análisis de Datos (Req:26, Sct:4)</div>
+      <div class="course">33 - Control Interno, Gobernanza y Riesgo (Req:15, Sct:5)</div>
+    </div>
+
+    <!-- 6to Semestre -->
+    <div class="semester">
+      <h3>6° Semestre</h3>
+      <div class="course">34 - Formulación y Preparación de Estados Contables (Req:28, Sct:5)</div>
+      <div class="course">35 - Introducción a las Finanzas (Req:22, Sct:5)</div>
+      <div class="course">36 - Presupuestos (Req:30, Sct:6)</div>
+      <div class="course">37 - Derecho Tributario IV (Req:31, Sct:5)</div>
+      <div class="course">38 - Modelamiento de Procesos de Negocios (Req:32, Sct:4)</div>
+      <div class="course">39 - Fundamentos de Auditoría y Ética (Req:33, Sct:5)</div>
+    </div>
+
+    <!-- 7mo Semestre -->
+    <div class="semester">
+      <h3>7° Semestre</h3>
+      <div class="course">40 - Contabilidad Especial (Req:28, Sct:4)</div>
+      <div class="course">41 - Auditoría Financiera (Req:34, Sct:5)</div>
+      <div class="course">42 - Control de Gestión (Req:30, Sct:6)</div>
+      <div class="course">43 - Aplicación de Sistemas de Información Contables (Req:34, Sct:5)</div>
+      <div class="course">44 - Modelos de Regresión (Req:19, Sct:5)</div>
+      <div class="course">45 - Formulación, Evaluación y Valoración de Empresas (Req:35, Sct:5)</div>
+    </div>
+
+    <!-- 8vo Semestre -->
+    <div class="semester">
+      <h3>8° Semestre</h3>
+      <div class="course">46 - Contabilidad Gubernamental (Req:28, Sct:6)</div>
+      <div class="course">47 - Finanzas Corporativas (Req:45, Sct:5)</div>
+      <div class="course">48 - Auditoría Interna (Req:42, Sct:5)</div>
+      <div class="course">49 - Investigación Contable (Req:28, Sct:5)</div>
+      <div class="course">50 - Gestión y Auditoría de Sistemas de Información (Req:38, Sct:6)</div>
+      <div class="course">51 - Inglés Técnico I (Req:27, Sct:3)</div>
+    </div>
 
     <!-- 9no Semestre -->
     <div class="semester">
@@ -129,74 +138,66 @@ Malla-CPA-USACH <3
   </div>
 
   <script>
-    let approvedCourses = JSON.parse(localStorage.getItem('approvedCourses')) || [];
-
+    let approved = JSON.parse(localStorage.getItem('approved')) || [];
     const courses = document.querySelectorAll('.course');
 
-    function getSct(el) {
-      const sctMatch = el.textContent.match(/Sct:(\d+)/i);
-      return sctMatch ? parseInt(sctMatch[1]) : 0;
+    function getId(el) {
+      return parseInt(el.textContent.split('-')[0].trim());
     }
-
-    function updateBlockedStatus() {
-      let totalSct = 0;
-
+    function getReq(el) {
+      const m = el.textContent.match(/Req:([^\s,]+)/);
+      return m ? m[1].trim() : null;
+    }
+    function getSct(el) {
+      const m = el.textContent.match(/Sct:(\d+)/i);
+      return m ? parseInt(m[1]) : 0;
+    }
+    function sumSct() {
+      let total = 0;
       courses.forEach(el => {
-        const id = parseInt(el.textContent.split('-')[0]);
-        if (approvedCourses.includes(id)) {
-          totalSct += getSct(el);
+        if (approved.includes(getId(el))) {
+          total += getSct(el);
         }
       });
-
-      // Mostrar cursos del 9° según SCT
+      return total;
+    }
+    function update() {
+      const totalSct = sumSct();
+      console.log('SCT:', totalSct);
+      // Desbloqueo SCT
       if (totalSct >= 240) {
-        document.getElementById('curso52').style.display = 'block';
-        document.getElementById('curso53').style.display = 'block';
-        document.getElementById('curso54').style.display = 'block';
+        ['curso52','curso53','curso54','curso59','curso60','curso61'].forEach(id => {
+          document.getElementById(id)?.style.setProperty('display','block');
+        });
       }
       if (totalSct >= 210) {
-        document.getElementById('curso55').style.display = 'block';
-        document.getElementById('curso56').style.display = 'block';
-        document.getElementById('curso57').style.display = 'block';
+        ['curso55','curso56','curso57'].forEach(id => {
+          document.getElementById(id)?.style.setProperty('display','block');
+        });
       }
-
-      // Bloquear/desbloquear por requisito ID
+      // Bloqueo por Req ID
       courses.forEach(el => {
-        const id = parseInt(el.textContent.split('-')[0]);
-        const reqMatch = el.textContent.match(/Req:(\d+)/);
-        const req = reqMatch ? parseInt(reqMatch[1]) : null;
-
-        if (req && !approvedCourses.includes(req) && !approvedCourses.includes(id)) {
-          el.classList.add('blocked');
-        } else {
-          el.classList.remove('blocked');
+        const id = getId(el); const req = getReq(el);
+        if (approved.includes(id)) { el.classList.add('approved'); } else { el.classList.remove('approved'); }
+        if (req) {
+          if (req.startsWith('SCT')) return;
+          if (!approved.includes(parseInt(req))) { el.classList.add('blocked'); } else { el.classList.remove('blocked'); }
         }
       });
     }
 
-    // Inicial
     courses.forEach(el => {
-      const id = parseInt(el.textContent.split('-')[0]);
-      if (approvedCourses.includes(id)) {
-        el.classList.add('approved');
-      }
+      if (!el.id) el.style.display = 'block';
       el.addEventListener('click', () => {
         if (el.classList.contains('blocked')) return;
-
-        if (el.classList.contains('approved')) {
-          el.classList.remove('approved');
-          approvedCourses = approvedCourses.filter(x => x !== id);
-        } else {
-          el.classList.add('approved');
-          approvedCourses.push(id);
-        }
-
-        localStorage.setItem('approvedCourses', JSON.stringify(approvedCourses));
-        updateBlockedStatus();
+        const id = getId(el);
+        if (approved.includes(id)) { approved = approved.filter(x => x !== id); }
+        else { approved.push(id); }
+        localStorage.setItem('approved', JSON.stringify(approved));
+        update();
       });
     });
-
-    updateBlockedStatus();
+    update();
   </script>
 
 </body>
