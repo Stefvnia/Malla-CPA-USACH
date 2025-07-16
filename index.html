@@ -170,16 +170,15 @@ Malla-CPA-USACH <3
       <div class="course">51 - Inglés Técnico I (Req:27, Sct:3)</div>
     </div>
 
-    <!-- 9no Semestre -->
-    <div class="semester">
-      <h3>9° Semestre</h3>
-      <div class="course">52 - Seminario de Titulación I (Req:SCT 240, Sct:7)</div>
-      <div class="course">53 - Práctica Profesional (Req:SCT 240, Sct:10)</div>
-      <div class="course">54 - Juego de Empresas (Req:SCT 240, Sct:4)</div>
-      <div class="course">55 - Electivo I (Req:SCT 210, Sct:3)</div>
-      <div class="course">56 - Electivo II (Req:SCT 210, Sct:3)</div>
-      <div class="course">57 - Electivo III (Req:SCT 210, Sct:3)</div>
-    </div>
+ <div class="semester">
+  <h3>9° Semestre</h3>
+  <div class="course" id="curso52" style="display:none;">52 - Seminario de Titulación I (Req:SCT 240, Sct:7)</div>
+  <div class="course" id="curso53" style="display:none;">53 - Práctica Profesional (Req:SCT 240, Sct:10)</div>
+  <div class="course" id="curso54" style="display:none;">54 - Juego de Empresas (Req:SCT 240, Sct:4)</div>
+  <div class="course" id="curso55" style="display:none;">55 - Electivo I (Req:SCT 210, Sct:3)</div>
+  <div class="course" id="curso56" style="display:none;">56 - Electivo II (Req:SCT 210, Sct:3)</div>
+  <div class="course" id="curso57" style="display:none;">57 - Electivo III (Req:SCT 210, Sct:3)</div>
+</div>
 
     <!-- 10mo Semestre -->
     <div class="semester">
@@ -240,6 +239,32 @@ Malla-CPA-USACH <3
     });
   });
 </script>
+<script>
+  // Ejemplo: reemplaza este array con los ramos aprobados y sus SCT de tu usuario
+  const ramosAprobados = [
+    // Ejemplo: {id: 1, sct: 5, aprobado: true},
+    // Incluye aquí cada ramo aprobado con su SCT
+    // {id: 1, sct: 5, aprobado: true},
+    // {id: 2, sct: 4, aprobado: true},
+    // ...
+  ];
 
+  // Suma total de SCT aprobados
+  let sctTotal = ramosAprobados
+    .filter(r => r.aprobado)
+    .reduce((sum, r) => sum + r.sct, 0);
+
+  // Desbloquea ramos del 9° semestre según SCT acumulados
+  if (sctTotal >= 240) {
+    document.getElementById('curso52').style.display = 'block';
+    document.getElementById('curso53').style.display = 'block';
+    document.getElementById('curso54').style.display = 'block';
+  }
+  if (sctTotal >= 210) {
+    document.getElementById('curso55').style.display = 'block';
+    document.getElementById('curso56').style.display = 'block';
+    document.getElementById('curso57').style.display = 'block';
+  }
+</script>
 </body>
 </html>
