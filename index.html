@@ -1,4 +1,4 @@
-# Malla-CPA-USACH
+Malla-CPA-USACH <3
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,7 +57,7 @@
       text-align: left;
     }
 
-    .course:hover {
+    .course:hover:not(.blocked) {
       background: #ff99bb;
     }
 
@@ -192,5 +192,41 @@
     </div>
 
   </div>
+
+  <script>
+    let approvedCourses = JSON.parse(localStorage.getItem('approvedCourses')) || [];
+    const courses = document.querySelectorAll('.course');
+
+    courses.forEach(el => {
+      const text = el.textContent.trim();
+      const id = parseInt(text.split('-')[0].trim());
+      const reqMatch = text.match(/Req:(\d+)/);
+      const req = reqMatch ? parseInt(reqMatch[1]) : null;
+
+      if (approvedCourses.includes(id)) {
+        el.classList.add('approved');
+      }
+
+      if (req && !approvedCourses.includes(req) && !approvedCourses.includes(id)) {
+        el.classList.add('blocked');
+      }
+
+      el.addEventListener('click', () => {
+        if (el.classList.contains('blocked')) return;
+
+        if (el.classList.contains('approved')) {
+          el.classList.remove('approved');
+          approvedCourses = approvedCourses.filter(x => x !== id);
+        } else {
+          el.classList.add('approved');
+          approvedCourses.push(id);
+        }
+
+        localStorage.setItem('approvedCourses', JSON.stringify(approvedCourses));
+        location.reload();
+      });
+    });
+  </script>
+
 </body>
 </html>
